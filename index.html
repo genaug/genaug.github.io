@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FunAug: Functional Augmentation for Robotics Demonstrations.">
+  <meta name="keywords" content="funaug, data augmentation, imitation learning, robot manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FunAug</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Y34PZ3XBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4Y34PZ3XBE');
+  </script>
+
+  <script>
+    function updateSingleVideo() {
+      var demo = document.getElementById("single-menu-demos").value;
+      var task = document.getElementById("single-menu-tasks").value;
+      var inst = document.getElementById("single-menu-instances").value;
+
+      console.log("single", demo, task, inst)
+
+      var video = document.getElementById("single-task-result-video");
+      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + 
+                  task + 
+                  "-two_stream_full_clip_lingunet_lat_transporter-n" + 
+                  demo + 
+                  "-train/videos/" + 
+                  task +
+                  "-0000" + 
+                  inst + 
+                  ".mp4";
+      video.playbackRate = 2.0;
+      video.play();
+    }
+
+    function updateMultiVideo() {
+      var demo = document.getElementById("multi-menu-demos").value;
+      var task = document.getElementById("multi-menu-tasks").value;
+      var inst = document.getElementById("multi-menu-instances").value;
+
+      console.log("multi", demo, task, inst)
+
+      var video = document.getElementById("multi-task-result-video");
+      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + 
+                  task + 
+                  "-two_stream_full_clip_lingunet_lat_transporter-n" + 
+                  demo + 
+                  "-train/videos/multi-language-conditioned-" + 
+                  task +
+                  "-0000" + 
+                  inst + 
+                  ".mp4";
+      video.playbackRate = 2.0;
+      video.play();
+    }
+
+  </script>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" target="_blank" href="https://mohitshridhar.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" target="_blank" href="https://askforalfred.com/">
+            ALFRED
+          </a>
+          <a class="navbar-item" target="_blank" href="http://alfworld.github.io/">
+            ALFWorld
+          </a>
+          <a class="navbar-item" target="_blank" href="https://arxiv.org/pdf/1806.03831.pdf">
+            INGRESS
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CLIPort: What and Where Pathways for Robotic Manipulation</h1>
+          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2021</a></h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://mohitshridhar.com/">Mohit Shridhar</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a target="_blank" href="http://lucasmanuelli.com/">Lucas Manuelli</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>NVIDIA</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/pdf/2109.12098.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+<!--               <span class="link-block">
+                <a target="_blank" href="https://drive.google.com/file/d/1xzG5e1XF958HPuD_FZTiKROd9AQyd1fS/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://youtu.be/UdzoagBgWTA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://github.com/cliport/cliport"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop height="100%">
+        <source src="https://cliport.github.io/media/videos/10sim_web_teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </br>
+        <span class="dcliport">CLIPort</span> is an end-to-end imitation-learning agent that can learn a single language-conditioned policy for various tabletop tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/1_folding.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/4_chess.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/3_packing.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/6_sweeping.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/9_cherry.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/7_reading.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+       <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/2_bowl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/8_rope.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
+            <source src="https://cliport.github.io/media/videos/5_stacking.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<h2 class="subtitle has-text-centered">
+</br>
+  We learn <b>one multi-task policy</b> for 9 real-world tasks including folding cloths, sweeping beans etc. with just <b>179</b> image-action training pairs.
+</h2>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            How can we imbue robots with the ability to manipulate objects precisely but also to
+            reason about them in terms of abstract concepts? 
+          </p>
+          <p>
+            Recent works in manipulation have shown that end-to-end networks
+            can learn dexterous skills that require precise spatial reasoning, but these methods 
+            often fail to generalize to new goals or quickly learn transferable concepts across tasks. In
+            parallel, there has been great progress in learning generalizable semantic representations 
+            for vision and language by training on large-scale internet data, however
+            these representations lack the spatial understanding necessary for fine-grained
+            manipulation. To this end, we propose a framework that combines the best of
+            both worlds: a two-stream architecture with semantic and spatial 
+            pathways for vision-based manipulation. Specifically, we present <span class="dcliport">CLIPort</span>, a
+            language-conditioned imitation-learning agent that combines the broad semantic
+            understanding <i>(what)</i> of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision 
+            <i>(where)</i> of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
+          </p>
+          <p>
+            Our end-to-end framework is capable of solving a variety of language-specified tabletop
+            tasks from packing unseen objects to folding cloths, all <b>without any explicit representations</b>
+            of object poses, instance segmentations, memory, symbolic states, or
+            syntactic structures. Experiments in simulation and hardware show that our approach 
+            is data-efficient and generalizes effectively to seen and unseen semantic
+            concepts. We even train <b>one multi-task policy</b> for 10 simulated and 9 real-world
+            tasks that shows better or comparable performance to single-task policies.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+
+    <!-- Paper video. -->
+    </br>
+    </br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/UdzoagBgWTA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+
+    <!-- Animation. -->
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <h2 class="title is-3"><span class="dcliport">CLIPort</span></h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Two-Stream Architecture</h3>
+        <div class="content has-text-justified">
+          <p>
+            Broadly inspired by (or vaguely analogous to) the <a target=”_blank” href="https://en.wikipedia.org/wiki/Two-streams_hypothesis">two-stream hypothesis in cognitive psychology</a>, we present a two-stream architecture 
+            for vision-based manipulation with semantic and spatial pathways. The semantic stream uses a pre-trained CLIP model  
+            to encode RGB and language-goal input. Since CLIP is trained with large amounts of image-caption pairs from the internet,
+            it acts as a powerful semantic prior for <a target="_blank" href="https://distill.pub/2021/multimodal-neurons/">grounding visual concepts</a> like colors, shapes, parts, texts, and object categories. 
+            The spatial stream is a tabula rasa fully-convolutional network that encodes RGB-D input. 
+          </p>
+        </div>
+        <img src="https://cliport.github.io/media/images/two_stream_architecture.png" class="interpolation-image" 
+         alt="Interpolate start reference image." />
+        <br/>
+        <br/>
+            <b>Paradigm 1:</b> Unlike existing object detectors, CLIP is not limited to a predefined set of object classes. And unlike other vision-language models, it's not restricted by a top-down pipeline that detects objects with bounding boxes or instance segmentations. This allows us to forgo the traditional paradigm of training explicit detectors for cloths, pliers, chessboard squares, cherry stems, and other arbitrary things. 
+        <br/>
+        <br/>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">TransporterNets</h3>
+        <div class="content has-text-justified">
+          <p>
+            We use this two-stream architecture in all three networks of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a> 
+            to predict pick and place affordances at each timestep. TransporterNets first attends to a local region to decide where to pick, 
+            then computes a placement location by finding the best match for the picked region through 
+            cross-correlation of deep visual features. This structure serves as a powerful inductive bias for learning <a target="_blank" href="https://fabianfuchsml.github.io/equivariance1of2/">roto-translationally equivariant</a> representations in tabletop environments.
+
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="transporter-gif"
+                 controls
+                 muted
+                 autoplay
+                 loop
+                 width="40%">
+            <source src="https://transporternets.github.io/images/animation.mp4"
+                    type="video/mp4">
+          </video>
+          <p>
+          Credit: <a href="https://transporternets.github.io/">Zeng et. al (Google)</a>
+          </p>
+        </div>
+        <br/>
+            <b>Paradigm 2:</b> TransporterNets takes an <a target="_blank" href="https://en.wikipedia.org/wiki/Ecological_psychology">action-centric approach</a> to perception where the objective is to <i>detect actions</i> rather than <i>detect objects</i> and then learn a policy. Keeping the action-space grounded in the perceptual input allows us to exploit geometric symmetries for efficient representation learning. 
+            When combined with CLIP's pre-trained representations, this enables the learning of reusable manipulation skills without any "objectness" assumptions.
+        <br/>
+        <br/>
+        <br/>
+
+        <!--/ Re-rendering. -->
+
+        <h2 class="title is-3">Results</h2>
+
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h3 class="title is-5">Single-Task Models</h3>
+
+            Trained with
+            <div class="select is-small">
+              <select id="single-menu-demos" onchange="updateSingleVideo()">
+              <option value="1">1</option>
+              <option value="10">10</option>
+              <option value="100">100</option>
+              <option value="1000" selected="selected">1000</option>
+              </select>
+            </div>
+            demos, evaluated on 
+            <div class="select is-small">     
+              <select id="single-menu-tasks" onchange="updateSingleVideo()">
+              <option value="align-rope">align-rope</option>
+              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
+              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
+              <option value="packing-boxes-pairs-seen-colors">packing-boxes-pairs-seen-colors</option>
+              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
+              <option value="packing-seen-google-objects-seq" selected="selected">packing-seen-google-objects-seq</option>
+              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
+              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
+              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>
+              <option value="packing-shapes">packing-shapes</option>
+              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
+              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
+              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
+              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
+              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
+              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
+              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
+              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
+              </select>
+            </div>
+            instance
+            <div class="select is-small">
+              <select id="single-menu-instances" onchange="updateSingleVideo()">
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05" selected="selected">05</option>
+              </select>
+            </div>
+            <br/>
+            <br/>
+
+            <video id="single-task-result-video"
+                   controls
+                   muted
+                   autoplay
+                   loop
+                   width="100%">
+              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-seen-google-objects-seq-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/packing-seen-google-objects-seq-000005.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column has-text-centered">
+            <h3 class="title is-5">One Multi-Task Model</h3>
+            
+            Trained with
+            <div class="select is-small">
+              <select id="multi-menu-demos" onchange="updateMultiVideo()">
+              <option value="1">1 T</option>
+              <option value="10">10 T</option>
+              <option value="100">100 T</option>
+              <option value="1000" selected="selected">1000 T</option>
+              </select>
+            </div>
+            demos, evaluated on  
+            <div class="select is-small">   
+              <select id="multi-menu-tasks" onchange="updateMultiVideo()">
+              <option value="align-rope">align-rope</option>
+              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
+              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
+              <option value="packing-boxes-pairs-seen-colors" selected="selected">packing-boxes-pairs-seen-colors</option>
+              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
+              <option value="packing-seen-google-objects-seq">packing-seen-google-objects-seq</option>
+              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
+              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
+              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>
+              <option value="packing-shapes">packing-shapes</option>
+              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
+              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
+              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
+              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
+              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
+              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
+              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
+              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
+              </select>
+            </div>
+            instance
+            <div class="select is-small">
+              <select id="multi-menu-instances" onchange="updateMultiVideo()">
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04" selected="selected">04</option>
+              <option value="05">05</option>
+              </select>
+            </div>
+            </br>
+            </br>
+
+            <video id="multi-task-result-video"
+                   controls
+                   muted
+                   autoplay
+                   loop
+                   width="100%">
+              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-boxes-pairs-seen-colors-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/multi-language-conditioned-packing-boxes-pairs-seen-colors-000004.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        </br>
+
+        <h3 class="title is-4">Affordance Predictions</h3>
+        <div class="content has-text-justified">
+          <p>
+            Examples of pick and place affordance predictions from multi-task <span class="dcliport">CLIPort</span> models:
+          </p>
+        </div>
+        <br/>
+        <img src="https://cliport.github.io/media/images/affordances.png" class="interpolation-image" 
+         alt="Interpolate start reference image."/>
+        <br/>
+        <br/>
+        <img src="https://cliport.github.io/media/images/affordance2.png" class="interpolation-image" 
+         alt="Interpolate start reference image."/>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-widescreen content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{shridhar2021cliport,
+  title     = {CLIPort: What and Where Pathways for Robotic Manipulation},
+  author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
+  booktitle = {Proceedings of the 5th Conference on Robot Learning (CoRL)},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
