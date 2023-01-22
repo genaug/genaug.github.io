@@ -1,14 +1,14 @@
-# CLIPort
+# FunAug
 
-This is the repository that contains source code for the [CLIPort website](https://cliport.github.io).
+This is the repository that contains source code for the [FunAug website](https://funaug.github.io).
 
-If you find CLIPort useful for your work please cite:
+If you find FunAug useful for your work please cite:
 ```
-@article{shridhar2021cliport
-  author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
-  title     = {CLIPort: What and Where Pathways for Robotic Manipulation},
+@article{chen2023funaug
+  author    = {Chen, Zoey and Kiami, Sho and Gupta, Abhishek and Kumar, Vikash},
+  title     = {FunAug: blablabla...our paper title},
   journal   = {arXiv preprint arXiv:??},
-  year      = {2021},
+  year      = {2023},
 }
 ```
 
