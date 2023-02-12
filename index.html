@@ -18,50 +18,50 @@
     gtag('config', 'G-4Y34PZ3XBE');
   </script>
 
-  <script>
-    function updateSingleVideo() {
-      var demo = document.getElementById("single-menu-demos").value;
-      var task = document.getElementById("single-menu-tasks").value;
-      var inst = document.getElementById("single-menu-instances").value;
+<!--  <script>-->
+<!--    function updateSingleVideo() {-->
+<!--      var demo = document.getElementById("single-menu-demos").value;-->
+<!--      var task = document.getElementById("single-menu-tasks").value;-->
+<!--      var inst = document.getElementById("single-menu-instances").value;-->
 
-      console.log("single", demo, task, inst)
+<!--      console.log("single", demo, task, inst)-->
 
-      var video = document.getElementById("single-task-result-video");
-      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + 
-                  task + 
-                  "-two_stream_full_clip_lingunet_lat_transporter-n" + 
-                  demo + 
-                  "-train/videos/" + 
-                  task +
-                  "-0000" + 
-                  inst + 
-                  ".mp4";
-      video.playbackRate = 2.0;
-      video.play();
-    }
+<!--      var video = document.getElementById("single-task-result-video");-->
+<!--      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + -->
+<!--                  task + -->
+<!--                  "-two_stream_full_clip_lingunet_lat_transporter-n" + -->
+<!--                  demo + -->
+<!--                  "-train/videos/" + -->
+<!--                  task +-->
+<!--                  "-0000" + -->
+<!--                  inst + -->
+<!--                  ".mp4";-->
+<!--      video.playbackRate = 2.0;-->
+<!--      video.play();-->
+<!--    }-->
 
-    function updateMultiVideo() {
-      var demo = document.getElementById("multi-menu-demos").value;
-      var task = document.getElementById("multi-menu-tasks").value;
-      var inst = document.getElementById("multi-menu-instances").value;
+<!--    function updateMultiVideo() {-->
+<!--      var demo = document.getElementById("multi-menu-demos").value;-->
+<!--      var task = document.getElementById("multi-menu-tasks").value;-->
+<!--      var inst = document.getElementById("multi-menu-instances").value;-->
 
-      console.log("multi", demo, task, inst)
+<!--      console.log("multi", demo, task, inst)-->
 
-      var video = document.getElementById("multi-task-result-video");
-      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + 
-                  task + 
-                  "-two_stream_full_clip_lingunet_lat_transporter-n" + 
-                  demo + 
-                  "-train/videos/multi-language-conditioned-" + 
-                  task +
-                  "-0000" + 
-                  inst + 
-                  ".mp4";
-      video.playbackRate = 2.0;
-      video.play();
-    }
+<!--      var video = document.getElementById("multi-task-result-video");-->
+<!--      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + -->
+<!--                  task + -->
+<!--                  "-two_stream_full_clip_lingunet_lat_transporter-n" + -->
+<!--                  demo + -->
+<!--                  "-train/videos/multi-language-conditioned-" + -->
+<!--                  task +-->
+<!--                  "-0000" + -->
+<!--                  inst + -->
+<!--                  ".mp4";-->
+<!--      video.playbackRate = 2.0;-->
+<!--      video.play();-->
+<!--    }-->
 
-  </script>
+<!--  </script>-->
 
 
 
@@ -194,7 +194,7 @@
   <div class="container is-fullhd">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop height="100%">
-        <source src="https://cliport.github.io/media/videos/teaser.mp4"
+        <source src="https://genaug.github.io/media/videos/teaser.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
