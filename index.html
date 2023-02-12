@@ -115,219 +115,42 @@
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">GenAug: Retargeting behaviors to unseen situations via Generative Augmentation</h1>
-          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">Under Submission</a></h3>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a target="_blank" href="https://qiuyuchen14.github.io/">Zoey Chen</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://www.linkedin.com/in/shokiami">Sho Kiami</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://abhishekunique.github.io/">Abhishek Gupta*</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a target="_blank" href="https://vikashplus.github.io/">Vikash Kumar*</a><sup>2</sup>
-            </span>
-          </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Meta</span>
-          </div>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a target="_blank" href="https://arxiv.org/pdf/2109.12098.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-<!--               <span class="link-block">
-                <a target="_blank" href="https://drive.google.com/file/d/1xzG5e1XF958HPuD_FZTiKROd9AQyd1fS/view?usp=sharing"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a target="_blank" href="https://youtu.be/UdzoagBgWTA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a target="_blank" href="https://github.com/genaug/genaug"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code (Coming Soon!)</span>
-                  </a>
-              </span>
-            </div>
+    <!-- Animation. -->
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <h2 class="title is-3"><span class="dcliport">CLIPort</span></h2>
 
-          </div>
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Two-Stream Architecture</h3>
+        <div class="content has-text-justified">
+          <p>
+            Broadly inspired by (or vaguely analogous to) the <a target=”_blank” href="https://en.wikipedia.org/wiki/Two-streams_hypothesis">two-stream hypothesis in cognitive psychology</a>, we present a two-stream architecture
+            for vision-based manipulation with semantic and spatial pathways. The semantic stream uses a pre-trained CLIP model
+            to encode RGB and language-goal input. Since CLIP is trained with large amounts of image-caption pairs from the internet,
+            it acts as a powerful semantic prior for <a target="_blank" href="https://distill.pub/2021/multimodal-neurons/">grounding visual concepts</a> like colors, shapes, parts, texts, and object categories.
+            The spatial stream is a tabula rasa fully-convolutional network that encodes RGB-D input.
+          </p>
+        </div>
+        <img src="https://genaug.github.io/media/images/augmented_dataset.png" class="interpolation-image"
+         alt="Interpolate start reference image." />
+        <br/>
+        <br/>
+            Given the observation of the demonstration environment, <b>GenAug</b> automatically generates “augmented” RGBD images for entirely different and realistic environments, which display the visual realism and complexity of scenes that a robot might encounter in the real world.
+        <br/>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop height="100%">
-        <source src="https://genaug.github.io/media/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-      </br>
-        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
-      </h2>
-    </div>
-  </div>
-</section>
 
 
 
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="distractor" autoplay muted loop height="100%">
-        <source src="https://genaug.github.io/media/videos/distractor.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-      </br>
-        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="texture" autoplay muted loop height="100%">
-        <source src="https://genaug.github.io/media/videos/texture.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-      </br>
-        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="object" autoplay muted loop height="100%">
-        <source src="https://genaug.github.io/media/videos/object.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-      </br>
-        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="table" autoplay muted loop height="100%">
-        <source src="https://genaug.github.io/media/videos/table.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-      </br>
-        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
-      </h2>
-    </div>
-  </div>
-</section>
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/1_folding.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/4_chess.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/3_packing.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/6_sweeping.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/9_cherry.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/7_reading.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-       <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/2_bowl.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/8_rope.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
-            <source src="https://cliport.github.io/media/videos/5_stacking.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <h2 class="subtitle has-text-centered">
 </br>
   We collect 10 demonstrations per task for 10 pick-and-place tasks in the real world, and directly deploy on entirely unseen cluterred environments.
@@ -377,6 +200,154 @@
     </div>
 
 </section>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GenAug: Retargeting behaviors to unseen situations via Generative Augmentation</h1>
+          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">Under Submission</a></h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://qiuyuchen14.github.io/">Zoey Chen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a target="_blank" href="https://www.linkedin.com/in/shokiami">Sho Kiami</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a target="_blank" href="https://abhishekunique.github.io/">Abhishek Gupta*</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://vikashplus.github.io/">Vikash Kumar*</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>Meta</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/pdf/2109.12098.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://youtu.be/UdzoagBgWTA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://github.com/genaug/genaug"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon!)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop height="100%">
+        <source src="https://genaug.github.io/media/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </br>
+        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <video id="distractor" autoplay muted loop  height="70%" width="70%">
+        <source src="https://genaug.github.io/media/videos/distractor.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </br>
+        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <video id="texture" autoplay muted loop  height="70%" width="70%">
+        <source src="https://genaug.github.io/media/videos/texture.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </br>
+        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <video id="object" autoplay muted loop  height="70%" width="70%">
+        <source src="https://genaug.github.io/media/videos/object.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </br>
+        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <video id="table" autoplay muted loop  height="70%" width="70%">
+        <source src="https://genaug.github.io/media/videos/table.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </br>
+        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 <section class="section">
   <div class="container is-max-widescreen">
