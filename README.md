@@ -1,12 +1,12 @@
-# FunAug
+# GenAug
 
-This is the repository that contains source code for the [FunAug website](https://funaug.github.io).
+This is the repository that contains source code for the [GenAug website](https://genaug.github.io).
 
-If you find FunAug useful for your work please cite:
+If you find GenAug useful for your work please cite:
 ```
-@article{chen2023funaug
+@article{chen2023genaug
   author    = {Chen, Zoey and Kiami, Sho and Gupta, Abhishek and Kumar, Vikash},
-  title     = {FunAug: blablabla...our paper title},
+  title     = {GenAug: Retargeting behaviors to unseen situations via Generative Augmentation},
   journal   = {arXiv preprint arXiv:??},
   year      = {2023},
 }
