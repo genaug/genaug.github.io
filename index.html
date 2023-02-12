@@ -220,10 +220,10 @@
 </section>
 
 
-<h2 class="subtitle has-text-centered">
-</br>
-  We collect 10 demonstrations per task for 10 pick-and-place tasks in the real world, and directly deploy on entirely unseen cluterred environments.
-</h2>
+<!--<h2 class="subtitle has-text-centered">-->
+<!--</br>-->
+<!--  We collect 10 demonstrations per task for 10 pick-and-place tasks in the real world, and directly deploy on entirely unseen cluterred environments.-->
+<!--</h2>-->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -270,7 +270,7 @@
 </section>
 
 
-
+<h2 class="title is-3"><span class="dcliport">GenAug Modes: </span></h2>
 <section class="hero teaser">
   <div class="container is-fullhd">
     <div class="hero-body">
@@ -335,214 +335,214 @@
 
 
 
-<section class="section">
-  <div class="container is-max-widescreen">
+<!--<section class="section">-->
+<!--  <div class="container is-max-widescreen">-->
 
-    <div class="rows">
+<!--    <div class="rows">-->
 
 
-    <!-- Animation. -->
-    <div class="rows is-centered ">
-      <div class="row is-full-width">
-        <h2 class="title is-3"><span class="dcliport">CLIPort</span></h2>
+<!--    &lt;!&ndash; Animation. &ndash;&gt;-->
+<!--    <div class="rows is-centered ">-->
+<!--      <div class="row is-full-width">-->
+<!--        <h2 class="title is-3"><span class="dcliport">CLIPort</span></h2>-->
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Two-Stream Architecture</h3>
-        <div class="content has-text-justified">
-          <p>
-            Broadly inspired by (or vaguely analogous to) the <a target=”_blank” href="https://en.wikipedia.org/wiki/Two-streams_hypothesis">two-stream hypothesis in cognitive psychology</a>, we present a two-stream architecture 
-            for vision-based manipulation with semantic and spatial pathways. The semantic stream uses a pre-trained CLIP model  
-            to encode RGB and language-goal input. Since CLIP is trained with large amounts of image-caption pairs from the internet,
-            it acts as a powerful semantic prior for <a target="_blank" href="https://distill.pub/2021/multimodal-neurons/">grounding visual concepts</a> like colors, shapes, parts, texts, and object categories. 
-            The spatial stream is a tabula rasa fully-convolutional network that encodes RGB-D input. 
-          </p>
-        </div>
-        <img src="https://cliport.github.io/media/images/two_stream_architecture.png" class="interpolation-image" 
-         alt="Interpolate start reference image." />
-        <br/>
-        <br/>
-            <b>Paradigm 1:</b> Unlike existing object detectors, CLIP is not limited to a predefined set of object classes. And unlike other vision-language models, it's not restricted by a top-down pipeline that detects objects with bounding boxes or instance segmentations. This allows us to forgo the traditional paradigm of training explicit detectors for cloths, pliers, chessboard squares, cherry stems, and other arbitrary things. 
-        <br/>
-        <br/>
-        <br/>
-        <!--/ Interpolating. -->
+<!--        &lt;!&ndash; Interpolating. &ndash;&gt;-->
+<!--        <h3 class="title is-4">Two-Stream Architecture</h3>-->
+<!--        <div class="content has-text-justified">-->
+<!--          <p>-->
+<!--            Broadly inspired by (or vaguely analogous to) the <a target=”_blank” href="https://en.wikipedia.org/wiki/Two-streams_hypothesis">two-stream hypothesis in cognitive psychology</a>, we present a two-stream architecture -->
+<!--            for vision-based manipulation with semantic and spatial pathways. The semantic stream uses a pre-trained CLIP model  -->
+<!--            to encode RGB and language-goal input. Since CLIP is trained with large amounts of image-caption pairs from the internet,-->
+<!--            it acts as a powerful semantic prior for <a target="_blank" href="https://distill.pub/2021/multimodal-neurons/">grounding visual concepts</a> like colors, shapes, parts, texts, and object categories. -->
+<!--            The spatial stream is a tabula rasa fully-convolutional network that encodes RGB-D input. -->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <img src="https://cliport.github.io/media/images/two_stream_architecture.png" class="interpolation-image" -->
+<!--         alt="Interpolate start reference image." />-->
+<!--        <br/>-->
+<!--        <br/>-->
+<!--            <b>Paradigm 1:</b> Unlike existing object detectors, CLIP is not limited to a predefined set of object classes. And unlike other vision-language models, it's not restricted by a top-down pipeline that detects objects with bounding boxes or instance segmentations. This allows us to forgo the traditional paradigm of training explicit detectors for cloths, pliers, chessboard squares, cherry stems, and other arbitrary things. -->
+<!--        <br/>-->
+<!--        <br/>-->
+<!--        <br/>-->
+<!--        &lt;!&ndash;/ Interpolating. &ndash;&gt;-->
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">TransporterNets</h3>
-        <div class="content has-text-justified">
-          <p>
-            We use this two-stream architecture in all three networks of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a> 
-            to predict pick and place affordances at each timestep. TransporterNets first attends to a local region to decide where to pick, 
-            then computes a placement location by finding the best match for the picked region through 
-            cross-correlation of deep visual features. This structure serves as a powerful inductive bias for learning <a target="_blank" href="https://fabianfuchsml.github.io/equivariance1of2/">roto-translationally equivariant</a> representations in tabletop environments.
+<!--        &lt;!&ndash; Re-rendering. &ndash;&gt;-->
+<!--        <h3 class="title is-4">TransporterNets</h3>-->
+<!--        <div class="content has-text-justified">-->
+<!--          <p>-->
+<!--            We use this two-stream architecture in all three networks of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a> -->
+<!--            to predict pick and place affordances at each timestep. TransporterNets first attends to a local region to decide where to pick, -->
+<!--            then computes a placement location by finding the best match for the picked region through -->
+<!--            cross-correlation of deep visual features. This structure serves as a powerful inductive bias for learning <a target="_blank" href="https://fabianfuchsml.github.io/equivariance1of2/">roto-translationally equivariant</a> representations in tabletop environments.-->
 
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="transporter-gif"
-                 controls
-                 muted
-                 autoplay
-                 loop
-                 width="40%">
-            <source src="https://transporternets.github.io/images/animation.mp4"
-                    type="video/mp4">
-          </video>
-          <p>
-          Credit: <a href="https://transporternets.github.io/">Zeng et. al (Google)</a>
-          </p>
-        </div>
-        <br/>
-            <b>Paradigm 2:</b> TransporterNets takes an <a target="_blank" href="https://en.wikipedia.org/wiki/Ecological_psychology">action-centric approach</a> to perception where the objective is to <i>detect actions</i> rather than <i>detect objects</i> and then learn a policy. Keeping the action-space grounded in the perceptual input allows us to exploit geometric symmetries for efficient representation learning. 
-            When combined with CLIP's pre-trained representations, this enables the learning of reusable manipulation skills without any "objectness" assumptions.
-        <br/>
-        <br/>
-        <br/>
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div class="content has-text-centered">-->
+<!--          <video id="transporter-gif"-->
+<!--                 controls-->
+<!--                 muted-->
+<!--                 autoplay-->
+<!--                 loop-->
+<!--                 width="40%">-->
+<!--            <source src="https://transporternets.github.io/images/animation.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--          <p>-->
+<!--          Credit: <a href="https://transporternets.github.io/">Zeng et. al (Google)</a>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <br/>-->
+<!--            <b>Paradigm 2:</b> TransporterNets takes an <a target="_blank" href="https://en.wikipedia.org/wiki/Ecological_psychology">action-centric approach</a> to perception where the objective is to <i>detect actions</i> rather than <i>detect objects</i> and then learn a policy. Keeping the action-space grounded in the perceptual input allows us to exploit geometric symmetries for efficient representation learning. -->
+<!--            When combined with CLIP's pre-trained representations, this enables the learning of reusable manipulation skills without any "objectness" assumptions.-->
+<!--        <br/>-->
+<!--        <br/>-->
+<!--        <br/>-->
 
-        <!--/ Re-rendering. -->
+<!--        &lt;!&ndash;/ Re-rendering. &ndash;&gt;-->
 
-        <h2 class="title is-3">Results</h2>
+<!--        <h2 class="title is-3">Results</h2>-->
 
-        <div class="columns">
-          <div class="column has-text-centered">
-            <h3 class="title is-5">Single-Task Models</h3>
+<!--        <div class="columns">-->
+<!--          <div class="column has-text-centered">-->
+<!--            <h3 class="title is-5">Single-Task Models</h3>-->
 
-            Trained with
-            <div class="select is-small">
-              <select id="single-menu-demos" onchange="updateSingleVideo()">
-              <option value="1">1</option>
-              <option value="10">10</option>
-              <option value="100">100</option>
-              <option value="1000" selected="selected">1000</option>
-              </select>
-            </div>
-            demos, evaluated on 
-            <div class="select is-small">     
-              <select id="single-menu-tasks" onchange="updateSingleVideo()">
-              <option value="align-rope">align-rope</option>
-              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
-              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
-              <option value="packing-boxes-pairs-seen-colors">packing-boxes-pairs-seen-colors</option>
-              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
-              <option value="packing-seen-google-objects-seq" selected="selected">packing-seen-google-objects-seq</option>
-              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
-              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
-              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>
-              <option value="packing-shapes">packing-shapes</option>
-              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
-              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
-              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
-              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
-              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
-              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
-              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
-              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
-              </select>
-            </div>
-            instance
-            <div class="select is-small">
-              <select id="single-menu-instances" onchange="updateSingleVideo()">
-              <option value="01">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-              <option value="04">04</option>
-              <option value="05" selected="selected">05</option>
-              </select>
-            </div>
-            <br/>
-            <br/>
+<!--            Trained with-->
+<!--            <div class="select is-small">-->
+<!--              <select id="single-menu-demos" onchange="updateSingleVideo()">-->
+<!--              <option value="1">1</option>-->
+<!--              <option value="10">10</option>-->
+<!--              <option value="100">100</option>-->
+<!--              <option value="1000" selected="selected">1000</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            demos, evaluated on -->
+<!--            <div class="select is-small">     -->
+<!--              <select id="single-menu-tasks" onchange="updateSingleVideo()">-->
+<!--              <option value="align-rope">align-rope</option>-->
+<!--              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>-->
+<!--              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>-->
+<!--              <option value="packing-boxes-pairs-seen-colors">packing-boxes-pairs-seen-colors</option>-->
+<!--              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>-->
+<!--              <option value="packing-seen-google-objects-seq" selected="selected">packing-seen-google-objects-seq</option>-->
+<!--              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>-->
+<!--              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>-->
+<!--              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>-->
+<!--              <option value="packing-shapes">packing-shapes</option>-->
+<!--              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>-->
+<!--              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>-->
+<!--              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>-->
+<!--              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>-->
+<!--              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>-->
+<!--              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>-->
+<!--              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>-->
+<!--              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            instance-->
+<!--            <div class="select is-small">-->
+<!--              <select id="single-menu-instances" onchange="updateSingleVideo()">-->
+<!--              <option value="01">01</option>-->
+<!--              <option value="02">02</option>-->
+<!--              <option value="03">03</option>-->
+<!--              <option value="04">04</option>-->
+<!--              <option value="05" selected="selected">05</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <br/>-->
+<!--            <br/>-->
 
-            <video id="single-task-result-video"
-                   controls
-                   muted
-                   autoplay
-                   loop
-                   width="100%">
-              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-seen-google-objects-seq-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/packing-seen-google-objects-seq-000005.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
+<!--            <video id="single-task-result-video"-->
+<!--                   controls-->
+<!--                   muted-->
+<!--                   autoplay-->
+<!--                   loop-->
+<!--                   width="100%">-->
+<!--              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-seen-google-objects-seq-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/packing-seen-google-objects-seq-000005.mp4"-->
+<!--                      type="video/mp4">-->
+<!--            </video>-->
+<!--          </div>-->
 
-          <div class="column has-text-centered">
-            <h3 class="title is-5">One Multi-Task Model</h3>
-            
-            Trained with
-            <div class="select is-small">
-              <select id="multi-menu-demos" onchange="updateMultiVideo()">
-              <option value="1">1 T</option>
-              <option value="10">10 T</option>
-              <option value="100">100 T</option>
-              <option value="1000" selected="selected">1000 T</option>
-              </select>
-            </div>
-            demos, evaluated on  
-            <div class="select is-small">   
-              <select id="multi-menu-tasks" onchange="updateMultiVideo()">
-              <option value="align-rope">align-rope</option>
-              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
-              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
-              <option value="packing-boxes-pairs-seen-colors" selected="selected">packing-boxes-pairs-seen-colors</option>
-              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
-              <option value="packing-seen-google-objects-seq">packing-seen-google-objects-seq</option>
-              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
-              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
-              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>
-              <option value="packing-shapes">packing-shapes</option>
-              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
-              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
-              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
-              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
-              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
-              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
-              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
-              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
-              </select>
-            </div>
-            instance
-            <div class="select is-small">
-              <select id="multi-menu-instances" onchange="updateMultiVideo()">
-              <option value="01">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-              <option value="04" selected="selected">04</option>
-              <option value="05">05</option>
-              </select>
-            </div>
-            </br>
-            </br>
+<!--          <div class="column has-text-centered">-->
+<!--            <h3 class="title is-5">One Multi-Task Model</h3>-->
+<!--            -->
+<!--            Trained with-->
+<!--            <div class="select is-small">-->
+<!--              <select id="multi-menu-demos" onchange="updateMultiVideo()">-->
+<!--              <option value="1">1 T</option>-->
+<!--              <option value="10">10 T</option>-->
+<!--              <option value="100">100 T</option>-->
+<!--              <option value="1000" selected="selected">1000 T</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            demos, evaluated on  -->
+<!--            <div class="select is-small">   -->
+<!--              <select id="multi-menu-tasks" onchange="updateMultiVideo()">-->
+<!--              <option value="align-rope">align-rope</option>-->
+<!--              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>-->
+<!--              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>-->
+<!--              <option value="packing-boxes-pairs-seen-colors" selected="selected">packing-boxes-pairs-seen-colors</option>-->
+<!--              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>-->
+<!--              <option value="packing-seen-google-objects-seq">packing-seen-google-objects-seq</option>-->
+<!--              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>-->
+<!--              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>-->
+<!--              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>-->
+<!--              <option value="packing-shapes">packing-shapes</option>-->
+<!--              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>-->
+<!--              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>-->
+<!--              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>-->
+<!--              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>-->
+<!--              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>-->
+<!--              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>-->
+<!--              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>-->
+<!--              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            instance-->
+<!--            <div class="select is-small">-->
+<!--              <select id="multi-menu-instances" onchange="updateMultiVideo()">-->
+<!--              <option value="01">01</option>-->
+<!--              <option value="02">02</option>-->
+<!--              <option value="03">03</option>-->
+<!--              <option value="04" selected="selected">04</option>-->
+<!--              <option value="05">05</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            </br>-->
+<!--            </br>-->
 
-            <video id="multi-task-result-video"
-                   controls
-                   muted
-                   autoplay
-                   loop
-                   width="100%">
-              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-boxes-pairs-seen-colors-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/multi-language-conditioned-packing-boxes-pairs-seen-colors-000004.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-        </br>
+<!--            <video id="multi-task-result-video"-->
+<!--                   controls-->
+<!--                   muted-->
+<!--                   autoplay-->
+<!--                   loop-->
+<!--                   width="100%">-->
+<!--              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-boxes-pairs-seen-colors-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/multi-language-conditioned-packing-boxes-pairs-seen-colors-000004.mp4"-->
+<!--                      type="video/mp4">-->
+<!--            </video>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </br>-->
 
-        <h3 class="title is-4">Affordance Predictions</h3>
-        <div class="content has-text-justified">
-          <p>
-            Examples of pick and place affordance predictions from multi-task <span class="dcliport">CLIPort</span> models:
-          </p>
-        </div>
-        <br/>
-        <img src="https://cliport.github.io/media/images/affordances.png" class="interpolation-image" 
-         alt="Interpolate start reference image."/>
-        <br/>
-        <br/>
-        <img src="https://cliport.github.io/media/images/affordance2.png" class="interpolation-image" 
-         alt="Interpolate start reference image."/>
+<!--        <h3 class="title is-4">Affordance Predictions</h3>-->
+<!--        <div class="content has-text-justified">-->
+<!--          <p>-->
+<!--            Examples of pick and place affordance predictions from multi-task <span class="dcliport">CLIPort</span> models:-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <br/>-->
+<!--        <img src="https://cliport.github.io/media/images/affordances.png" class="interpolation-image" -->
+<!--         alt="Interpolate start reference image."/>-->
+<!--        <br/>-->
+<!--        <br/>-->
+<!--        <img src="https://cliport.github.io/media/images/affordance2.png" class="interpolation-image" -->
+<!--         alt="Interpolate start reference image."/>-->
 
-      </div>
-    </div>
+<!--      </div>-->
+<!--    </div>-->
 
-  </div>
-</section>
+<!--  </div>-->
+<!--</section>-->
 
 
 <!--<section class="section" id="BibTeX">-->
