@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="FunAug: Functional Augmentation for Robotics Demonstrations.">
-  <meta name="keywords" content="funaug, data augmentation, imitation learning, robot manipulation">
+        content="GenAug: Retargeting behaviors to unseen situations via Generative Augmentation.">
+  <meta name="keywords" content="GenAug, data augmentation, imitation learning, robot manipulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FunAug</title>
+  <title>GenAug</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Y34PZ3XBE"></script>
@@ -94,7 +94,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" target="_blank" href="https://mohitshridhar.com">
+      <a class="navbar-item" target="_blank" href="https://qiuyuchen14.github.io">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -105,14 +105,8 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" target="_blank" href="https://askforalfred.com/">
+          <a class="navbar-item" target="_blank" href="https://sites.google.com/view/implicitaugmentation/home">
             ALFRED
-          </a>
-          <a class="navbar-item" target="_blank" href="http://alfworld.github.io/">
-            ALFWorld
-          </a>
-          <a class="navbar-item" target="_blank" href="https://arxiv.org/pdf/1806.03831.pdf">
-            INGRESS
           </a>
         </div>
       </div>
@@ -126,21 +120,24 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CLIPort: What and Where Pathways for Robotic Manipulation</h1>
-          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2021</a></h3>
+          <h1 class="title is-1 publication-title">GenAug: Retargeting behaviors to unseen situations via Generative Augmentation</h1>
+          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">Under Submission</a></h3>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a target="_blank" href="https://mohitshridhar.com/">Mohit Shridhar</a><sup>1</sup>,</span>
+              <a target="_blank" href="https://qiuyuchen14.github.io/">Zoey Chen</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="http://lucasmanuelli.com/">Lucas Manuelli</a><sup>2</sup>,</span>
+              <a target="_blank" href="http://lucasmanuelli.com/">Sho Kiami</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
+              <a target="_blank" href="https://abhishekunique.github.io/">Abhishek Gupta*</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://vikashplus.github.io/">Vikash Kumar*</a><sup>2</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>NVIDIA</span>
+            <span class="author-block"><sup>2</sup>Meta</span>
           </div>
 
           <div class="column has-text-centered">
@@ -176,12 +173,12 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a target="_blank" href="https://github.com/cliport/cliport"
+                <a target="_blank" href="https://github.com/genaug/genaug"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon!)</span>
                   </a>
               </span>
             </div>
@@ -197,12 +194,12 @@
   <div class="container is-fullhd">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop height="100%">
-        <source src="https://cliport.github.io/media/videos/10sim_web_teaser.mp4"
+        <source src="https://cliport.github.io/media/videos/teaser.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
       </br>
-        <span class="dcliport">CLIPort</span> is an end-to-end imitation-learning agent that can learn a single language-conditioned policy for various tabletop tasks.
+        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.
       </h2>
     </div>
   </div>
@@ -273,7 +270,7 @@
 </section>
 <h2 class="subtitle has-text-centered">
 </br>
-  We learn <b>one multi-task policy</b> for 9 real-world tasks including folding cloths, sweeping beans etc. with just <b>179</b> image-action training pairs.
+  We collect 10 demonstrations per task for 10 pick-and-place tasks in the real world, and directly deploy on entirely unseen cluterred environments.
 </h2>
 
 <section class="section">
@@ -284,31 +281,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            How can we imbue robots with the ability to manipulate objects precisely but also to
-            reason about them in terms of abstract concepts? 
-          </p>
-          <p>
-            Recent works in manipulation have shown that end-to-end networks
-            can learn dexterous skills that require precise spatial reasoning, but these methods 
-            often fail to generalize to new goals or quickly learn transferable concepts across tasks. In
-            parallel, there has been great progress in learning generalizable semantic representations 
-            for vision and language by training on large-scale internet data, however
-            these representations lack the spatial understanding necessary for fine-grained
-            manipulation. To this end, we propose a framework that combines the best of
-            both worlds: a two-stream architecture with semantic and spatial 
-            pathways for vision-based manipulation. Specifically, we present <span class="dcliport">CLIPort</span>, a
-            language-conditioned imitation-learning agent that combines the broad semantic
-            understanding <i>(what)</i> of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision 
-            <i>(where)</i> of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
-          </p>
-          <p>
-            Our end-to-end framework is capable of solving a variety of language-specified tabletop
-            tasks from packing unseen objects to folding cloths, all <b>without any explicit representations</b>
-            of object poses, instance segmentations, memory, symbolic states, or
-            syntactic structures. Experiments in simulation and hardware show that our approach 
-            is data-efficient and generalizes effectively to seen and unseen semantic
-            concepts. We even train <b>one multi-task policy</b> for 10 simulated and 9 real-world
-            tasks that shows better or comparable performance to single-task policies.
+            Robot learning methods have the potential for widespread generalization across tasks, environments,
+            and objects. However, these methods require large diverse datasets that are expensive to collect
+            in real-world robotics settings. For robot learning to generalize, we must be able to leverage sources
+            of data or priors beyond the robot’s own experience. In this work, we posit that image-text generative models,
+            which are pre-trained on large corpora of web-scraped data, can serve as such a data source.
+            We show that despite these generative models being trained on largely non-robotics data, they can serve as
+            effective ways to impart priors into the process of robot learning in a way that enables widespread
+            generalization. In particular, we show how pre-trained generative models can serve as effective tools
+            for semantically meaningful data augmentation. By leveraging these pre-trained models for generating
+            appropriate “semantic” data augmentations, we propose a system  <span class="dcliport">GenAug</span> that
+            is able to significantly improve policy generalization. We apply GenAug to tabletop manipulation tasks, showing the ability
+            to re-target behavior to novel scenarios, while only requiring marginal amounts of real-world data.
+            We demonstrate the efficacy of this system on a number of object manipulation problems in the real world,
+            showing a 40% improvement in generalization to novel scenes and objects.
           </p>
         </div>
       </div>
