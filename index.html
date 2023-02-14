@@ -380,7 +380,9 @@ few demonstrations in a simple training environment.
     <h2 class="title is-3"><span class="dcliport">Approach</span></h2>
       <h2 class="subtitle has-text-centered">
     </br>
-        1. <b>GenAug Overview</b>: Given a demonstration on one simple environment, GenAug can automatically add distractor objects, change the object texture, change object classes and change table and background.
+        1. <b>GenAug Overview</b>:
+    </br>
+        Given a demonstration on one simple environment, GenAug can automatically add distractor objects, change the object texture, change object classes and change table and background.
 
     </h2>
     <div class="container">
@@ -415,7 +417,51 @@ few demonstrations in a simple training environment.
   </div>
 </section>
 
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+    </br>
+        1. <b>System Overview</b>:
+    </br>
+        We generate a large and diverse augmented dataset from a small amount of human demonstrations collected in a simple environment,
+        and use this <b>augmented</b> dataset to train a language-conditioned robot policy and deploy it in the real-world.
+      </h2>
 
+      <video id="object" autoplay muted loop  height="70%" width="70%">
+        <source src="https://genaug.github.io/media/videos/training.mp4"
+                type="video/mp4">
+      </video>
+<!--      <h2 class="subtitle has-text-centered">-->
+<!--      </br>-->
+<!--        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.-->
+<!--      </h2>-->
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+    </br>
+        1. <b>Data Collection</b>:
+    </br>
+        To collect demonstrations in the real-world, a user generates a small dataset by specifying  pick and place locations. These 2D locations are projected to the 3D points in the robot coordinates using calibrated depth maps.
+        
+      </h2>
+
+      <video id="object" autoplay muted loop  height="70%" width="70%">
+        <source src="https://genaug.github.io/media/videos/datacollection.mp4"
+                type="video/mp4">
+      </video>
+<!--      <h2 class="subtitle has-text-centered">-->
+<!--      </br>-->
+<!--        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.-->
+<!--      </h2>-->
+    </div>
+  </div>
+</section>
 
 <!--<section class="hero teaser">-->
 <!--  <div class="container is-fullhd">-->
