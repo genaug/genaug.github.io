@@ -375,69 +375,112 @@ few demonstrations in a simple training environment.
 
 
 <section class="hero teaser">
-  <div class="container is-fullhd">
+  <div class="columns is-centered has-text-centered">
     <div class="hero-body">
-      <h2 class="title is-3"><span class="dcliport">GenAug Overview</span></h2>
+    <h2 class="title is-3"><span class="dcliport">Approach</span></h2>
       <h2 class="subtitle has-text-centered">
-      </br>
-         Given a demonstration on one simple environment, GenAug can automatically add distractor objects, change the object texture, change object classes and change table and background.
-      </h2>
-      <video id="distractor" autoplay muted loop  height="70%" width="70%">
-        <source src="https://genaug.github.io/media/videos/distractor.mp4"
-                type="video/mp4">
-      </video>
-<!--      <h2 class="subtitle has-text-centered">-->
-<!--      </br>-->
-<!--        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.-->
-<!--      </h2>-->
+    </br>
+        1. <b>GenAug Overview</b>: Given a demonstration on one simple environment, GenAug can automatically add distractor objects, change the object texture, change object classes and change table and background.
+
+    </h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop height="100%">
+            <source src="https://genaug.github.io/media/videos/distractor.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop height="100%">
+            <source src="https://genaug.github.io/media/videos/object.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop height="100%">
+            <source src="https://genaug.github.io/media/videos/table.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop height="100%">
+            <source src="https://genaug.github.io/media/videos/texture.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="object" autoplay muted loop  height="70%" width="70%">
-        <source src="https://genaug.github.io/media/videos/object.mp4"
-                type="video/mp4">
-      </video>
-<!--      <h2 class="subtitle has-text-centered">-->
-<!--      </br>-->
-<!--        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.-->
-<!--      </h2>-->
-    </div>
-  </div>
-</section>
 
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="table" autoplay muted loop  height="70%" width="70%">
-        <source src="https://genaug.github.io/media/videos/table.mp4"
-                type="video/mp4">
-      </video>
-<!--      <h2 class="subtitle has-text-centered">-->
-<!--      </br>-->
-<!--        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.-->
-<!--      </h2>-->
-    </div>
-  </div>
-</section>
 
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <video id="texture" autoplay muted loop  height="70%" width="70%">
-        <source src="https://genaug.github.io/media/videos/texture.mp4"
-                type="video/mp4">
-      </video>
+<!--<section class="hero teaser">-->
+<!--  <div class="container is-fullhd">-->
+<!--    <div class="hero-body">-->
+<!--      <h2 class="title is-3"><span class="dcliport">GenAug Overview</span></h2>-->
 <!--      <h2 class="subtitle has-text-centered">-->
 <!--      </br>-->
-<!--        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.-->
+<!--         Given a demonstration on one simple environment, GenAug can automatically add distractor objects, change the object texture, change object classes and change table and background.-->
 <!--      </h2>-->
-    </div>
-  </div>
-</section>
+<!--      <video id="distractor" autoplay muted loop  height="70%" width="70%">-->
+<!--        <source src="https://genaug.github.io/media/videos/distractor.mp4"-->
+<!--                type="video/mp4">-->
+<!--      </video>-->
+<!--&lt;!&ndash;      <h2 class="subtitle has-text-centered">&ndash;&gt;-->
+<!--&lt;!&ndash;      </br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.&ndash;&gt;-->
+<!--&lt;!&ndash;      </h2>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="hero teaser">-->
+<!--  <div class="container is-fullhd">-->
+<!--    <div class="hero-body">-->
+<!--      <video id="object" autoplay muted loop  height="70%" width="70%">-->
+<!--        <source src="https://genaug.github.io/media/videos/object.mp4"-->
+<!--                type="video/mp4">-->
+<!--      </video>-->
+<!--&lt;!&ndash;      <h2 class="subtitle has-text-centered">&ndash;&gt;-->
+<!--&lt;!&ndash;      </br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.&ndash;&gt;-->
+<!--&lt;!&ndash;      </h2>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="hero teaser">-->
+<!--  <div class="container is-fullhd">-->
+<!--    <div class="hero-body">-->
+<!--      <video id="table" autoplay muted loop  height="70%" width="70%">-->
+<!--        <source src="https://genaug.github.io/media/videos/table.mp4"-->
+<!--                type="video/mp4">-->
+<!--      </video>-->
+<!--&lt;!&ndash;      <h2 class="subtitle has-text-centered">&ndash;&gt;-->
+<!--&lt;!&ndash;      </br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.&ndash;&gt;-->
+<!--&lt;!&ndash;      </h2>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="hero teaser">-->
+<!--  <div class="container is-fullhd">-->
+<!--    <div class="hero-body">-->
+<!--      <video id="texture" autoplay muted loop  height="70%" width="70%">-->
+<!--        <source src="https://genaug.github.io/media/videos/texture.mp4"-->
+<!--                type="video/mp4">-->
+<!--      </video>-->
+<!--&lt;!&ndash;      <h2 class="subtitle has-text-centered">&ndash;&gt;-->
+<!--&lt;!&ndash;      </br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="dcliport">GenAug</span> is an semantic data augmentation method to enable broad robot generalization, by leveraging pre-trained generative models.&ndash;&gt;-->
+<!--&lt;!&ndash;      </h2>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
 
 
@@ -672,7 +715,7 @@ few demonstrations in a simple training environment.
       <div class="column">
         <div class="content has-text-centered">
           <p>
-            Website template borrowed from <a href="https://github.com/cliport/clipoprt.github.io">CLIPort</a> made by the amazing <a href="https://mohitshridhar.com/">Mohit Shridhar</a>.
+            Website template borrowed from <a href="https://github.com/cliport/clipoprt.github.io">CLIPort</a> made by the amazing <a href="https://mohitshridhar.com/">Mohit Shridhar</a> and  <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
           </p>
         </div>
       </div>
