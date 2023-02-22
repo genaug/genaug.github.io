@@ -4,11 +4,11 @@ This is the repository that contains source code for the [GenAug website](https:
 
 If you find GenAug useful for your work please cite:
 ```
-@article{chen2023genaug
-  author    = {Chen, Zoey and Kiami, Sho and Gupta, Abhishek and Kumar, Vikash},
-  title     = {GenAug: Retargeting behaviors to unseen situations via Generative Augmentation},
-  journal   = {arXiv preprint arXiv:??},
-  year      = {2023},
+@article{chen2023genaug,
+  title={GenAug: Retargeting behaviors to unseen situations via Generative Augmentation},
+  author={Chen, Zoey and Kiami, Sho and Gupta, Abhishek and Kumar, Vikash},
+  journal={arXiv preprint arXiv:2302.06671},
+  year={2023}
 }
 ```
 
