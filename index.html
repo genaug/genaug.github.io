@@ -332,17 +332,16 @@ few demonstrations in a simple training environment.
         </h2>
       </br>
       In addition, we show GenAug can apply to Behavior Cloning tasks such as ”close the top drawer”, with a different robot:"Fetch".
-      </br>
       In particular,  we collected 100 demonstrations and trained a CNN-MLP behavior cloning policy finetuned with R3M embeddings.
-      </br>
       The input is the RGB observation and the output is a 8-dim action vector.
-      <br/>
+      We tested on 100 unseen backgrounds using iGibson rooms and observed GenAug is able to achieve 60% success rate </br>
+      while policy without Genaug is only 1%, leading to almost 60% improvement.
+
       <br/>
       <img src="https://genaug.github.io/media/images/genaug_bc_train.gif"  width="960" height="780" />
         <br/>
       <br/>
-      We tested on 100 unseen backgrounds using iGibson rooms and observed GenAug is able to achieve 60% success rate </br>
-      while policy without Genaug is only 1%, leading to almost 60% improvement.
+     
      <img src="https://genaug.github.io/media/images/genaug_bc_test.gif"  width="960" height="780" />
       <br/>
   </div>
