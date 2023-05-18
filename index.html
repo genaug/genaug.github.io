@@ -308,17 +308,21 @@ few demonstrations in a simple training environment.
 <section class="hero teaser">
   <div class="columns is-centered has-text-centered">
     <div class="hero-body">
+      <br/>
+      <br/>
     <h2 class="title is-3"><span class="dcliport">Simulation Experiments</span></h2>
       <h2 class="subtitle has-text-centered">
     </br>
        To further study in depth the effectiveness of GenAug, we conduct large-scale experiments with other baselines in simulation.
         </br>In particular, we organize baseline methods as (1) in-domain augmentation methods and (2) learning from out-of-domain priors.
       </h2>
+      <br/>
+      <br/>
       <h2 class="title is-3"><span class="dcliport">Table-top Manipulation Tasks</span></h2>
       <h2 class="subtitle has-text-centered">
     </br>
         </h2>
-      <img src="https://genaug.github.io/media/images/sim_table1.png" class="interpolation-image"
+      <img src="https://genaug.github.io/media/images/sim_table.png" class="interpolation-image"
          alt="Interpolate start reference image." />
         <br/>
       <img src="https://genaug.github.io/media/images/sim2.png" class="interpolation-image"
@@ -333,11 +337,15 @@ few demonstrations in a simple training environment.
       </br>
       In particular,  we collected 100 demonstrations and trained a CNN-MLP behavior cloning policy finetuned with R3M embeddings.
       </br>
-      The input is the RGB observation and the output is a 8-dim action vector. We tested on 100 unseen backgrounds using iGibson rooms
-      </br>and observed GenAug is able to achieve 60% success rate while policy without Genaug is only 1%, leading to almost 60% improvement.
+      The input is the RGB observation and the output is a 8-dim action vector.
+      <br/>
+      <br/>
       <img src="https://genaug.github.io/media/images/genaug_bc_train.gif" class="interpolation-image"
          alt="Interpolate start reference image." />
         <br/>
+      <br/>
+      We tested on 100 unseen backgrounds using iGibson rooms and observed GenAug is able to achieve 60% success rate </br>
+      while policy without Genaug is only 1%, leading to almost 60% improvement.
      <img src="https://genaug.github.io/media/images/genaug_bc_test.gif" class="interpolation-image"
        alt="Interpolate start reference image." />
       <br/>
